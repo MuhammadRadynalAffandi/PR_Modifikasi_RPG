@@ -1,9 +1,8 @@
-//variabel2 global
 public class GameInfo {
     private Boolean isGameOver = false;
     private Player objPlayer;
-    private Ruangan objRuangan; //ruangan aktif
-
+    private Ruangan objRuangan;
+    
     public Ruangan getObjRuangan() {
         return objRuangan;
     }
