@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class GameEngine {
-    // user interface game
+
     Scanner sc = new Scanner(System.in);
     Player objPlayer;
     Ruangan objRuangan;
@@ -13,20 +13,16 @@ public class GameEngine {
         objGameEngine.mulai();
     }
 
-    //constructor
     public GameEngine() {
-        //init ruangannya
 
-        //NOMZ: Inisialisasi Player Menggunakan GameInfo agar Item Cincin ikut diinialisasi
         objPlayer = new Player(objGameInfo);
 
-        //NOMZ: Inisialisasi Ruangan Menggunakan GameInfo agar Item Roti ikut diinialisasi
-        objRuangan = new Ruangan(objGameInfo); //cuma satu ruangan
+        objRuangan = new Ruangan(objGameInfo);
 
         objRuangan.setDeskripsi("Ruangan kecil, dengan satu pintu dan jendela");
 
-        objPlayer.setRuanganAktif(objRuangan);  //set ruangan aktif player
-
+        objPlayer.setRuanganAktif(objRuangan);
+        
         objGameInfo.setObjPlayer(objPlayer);
         objGameInfo.setObjRuangan(objRuangan);
     }
@@ -43,7 +39,7 @@ public class GameEngine {
         int pil = sc.nextInt();
         System.out.println("--");
         if (pil==3) {
-            objGameInfo.setGameOver(true); //keluar
+            objGameInfo.setGameOver(true);
         } else if (pil==1) {
             objRuangan.pilihanAksi(); //
         } else if (pil==2) {
