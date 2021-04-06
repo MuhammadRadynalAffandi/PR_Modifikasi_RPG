@@ -4,9 +4,8 @@ import java.util.Scanner;
 import static java.lang.String.format;
 
 public class Player {
-    //item default yang dimiliki player
     private final ArrayList<Item> arrItem;
-    private Ruangan ruanganAktif;  //ruangan tempat player saat ini berada
+    private Ruangan ruanganAktif;
     private int kesehatan = 100;
     private final String nama = "budiwati";
     private final Scanner sc = new Scanner(System.in);
@@ -37,8 +36,6 @@ public class Player {
         objCincin.setDeskripsi("Cincin emas bertuliskan suatu kalimat..");
         objCincin.setObjGameInfo(objGameInfo);
 
-        // NOMZ: Item Selanjutnya Bisa DIletakkan Disini
-
         arrItem.add(objCincin);
     }
 
@@ -46,8 +43,6 @@ public class Player {
         arrItem.add(objItem);
     }
 
-    //cari item yang dimiliki oleh player, return TRUE jika ada
-    //salah satu yg menggunakan: pintu untuk mengecek apakah player sudah punya kunci
     public boolean cariItem(String namaItem) {
         for (Item objItem:arrItem) {
              if (namaItem.equals(objItem.getNama())) {
@@ -72,8 +67,6 @@ public class Player {
         }
     }
 
-    // hapus item di ruangan berdasarkan namanya
-    // digunakan saat suatu item diambil oleh player misalnya
     public void hapusItem(Item objItem) {
         arrItem.remove(objItem);  //buang item
     }
@@ -81,10 +74,7 @@ public class Player {
 
     public void pilihanAksi() {
         System.out.println("**** Pilihan Aksi pada Player *** ");
-        //disamakan dengan  ruangan
-        //bisa direfactoring nanti supaya tdk duplikasi
 
-        //aksi2 item yang dimiliki player
         int urutPil = 0;  //item
         int subPil;   //aksinya
         System.out.println("Item yang dimiliki player : ");
@@ -92,21 +82,19 @@ public class Player {
             urutPil++;
             subPil = 0;   //sistem penomorannya 11  12  13 dst
             System.out.println(objItem.getNama());
-            //ambil pilihannya
             ArrayList <String> arrPil = objItem.getAksi();
-            //print pilihan
+
             for (String strPil:arrPil) {
                 subPil++;
                 System.out.printf("%d%d. %s %n", urutPil, subPil, strPil);
             }
         }
 
-        //info seputar player
         urutPil++;
         subPil = 0;
-        int pilInfoPlayer  = urutPil; //catat untuk infoplayer
+        int pilInfoPlayer  = urutPil;
         System.out.println("Info Player");
-        //hanya satu
+        
         subPil++;
         System.out.printf("%d%d. info player%n", urutPil, subPil);
 
@@ -114,8 +102,8 @@ public class Player {
         String strPil = sc.next();
         System.out.println("--");
 
-        int pil    =  Integer.parseInt(strPil.substring(0,1)); //ambil digit pertama, asumsikan jumlah tidak lebih dari 10
-        subPil     =  Integer.parseInt(strPil.substring(1,2)); //ambil digit kedua, asumsikan jumlah tidak lebih dari 10
+        int pil    =  Integer.parseInt(strPil.substring(0,1));
+        subPil     =  Integer.parseInt(strPil.substring(1,2));
 
         if (pil == pilInfoPlayer) {
             printPlayer();
