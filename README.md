@@ -10,3 +10,5 @@ Berikut beberapa hal yang kami modifikasi dan tambahkan:
 - Menambah GameInfo pada Constructor Ruangan untuk inisialisasi objek roti
 - Menambah GameInfo pada Constructor Player untuk inisialisasi objek cincin
 - Membuat Method Override Pada Fungsi ProsesAksi untuk NPC, Item, dan Pintu
+
+*Maaf kalau masih banyak kekurangan, karena saya masih belum terbiasa memakai github
