@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-// NOMZ: Berfungsi sebagai parent dari Item, Pintu, NPC
-
-//abstract public class Interactable {
 public class Interactable {
     protected String nama;
     protected final ArrayList<String> arrAksi = new ArrayList<>();
@@ -14,9 +11,6 @@ public class Interactable {
 
     public String getNama() { return nama; }
 
-    // NOMZ: Ini nanti di override, biar gak menimbulkan pertanyaan tentang abstract class
-    // jadinya fungsi kosong, kalau pake abstract class uncomment yang bawah sama yang atas
     public void prosesAksi(int pil){ }
 
-    // abstract void prosesAksi(int pil);
 }
